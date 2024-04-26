@@ -3,19 +3,16 @@ package org.example;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 @Component
 @Setter
 @Getter
+@Scope("prototype")
 public class Contact {
 
-    private FullName fullName;
-    private PhoneNumber phoneNumber;
-    private Email email;
+    private String fullName;
+    private String phoneNumber;
+    private String email;
 
-    public Contact(FullName fullName, PhoneNumber phoneNumber, Email email) {
-        this.fullName = fullName;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-    }
 }
