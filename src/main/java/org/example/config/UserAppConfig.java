@@ -1,10 +1,9 @@
 package org.example.config;
 
 import org.example.Contact;
-import org.example.Contacts;
-import org.example.ContactsUser;
 import org.springframework.context.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
@@ -12,15 +11,9 @@ import java.util.List;
 @Profile("user")
 public class UserAppConfig {
 
-//    @Bean
-//    public Contacts contacts(){
-//        return new ContactsUser();
-//    }
-
-@Bean
-public List<Contact> contacts(){
-    List<Contact> list = List.of(new Contact(), new Contact(), new Contact());
-    return list;
-}
+    @Bean
+    public List<Contact> contacts() {
+        return new ArrayList<>();
+    }
 
 }
